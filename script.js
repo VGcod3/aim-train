@@ -87,7 +87,7 @@ function createRandomCircle() {
 function getRandomNumber(min, max) {
 	return Math.round(Math.random() * (max - min) + min)
 }
-
+ 
 function getRandomColour() {
 	const index = Math.floor(Math.random() * colours.length);
 	return colours[index];
