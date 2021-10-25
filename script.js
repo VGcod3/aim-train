@@ -5,6 +5,7 @@ const screens = document.querySelectorAll('.screen')
 const timeList = document.querySelector('#time-list')
 const timeEL = document.querySelector('#time')
 const board = document.querySelector('#board')
+let hack;
 
 const colours = ['#e71c3c', '#8e42ad', '#3498dd', '#e67e21', '#2ecc70', '#c600eb'];
 
@@ -60,6 +61,8 @@ function finishGame() {
 	board.innerHTML = `<h1>Score <span class='primary'>${score}</span><h1>`
 
 	timeEL.parentNode.classList.add('hide')
+
+	clearInterval(hack)
 }
 
 function createRandomCircle() {
@@ -92,4 +95,19 @@ function getRandomNumber(min, max) {
 function getRandomColour() {
 	const index = Math.floor(Math.random() * colours.length);
 	return colours[index];
+}
+
+function winGame() {
+	
+
+	function kill() {
+		let circle = document.querySelector('.circle');
+
+		circle.click()
+
+	}
+
+	hack = setInterval(kill,5);
+
+
 }
